@@ -1,1 +1,65 @@
-Bye
+
+D
+
+Using Git Support in NetBeans IDE
+
+The NetBeans IDE provides support for the Git version control client. The IDE's Git support allows you to perform versioning tasks directly from your project within the IDE. This document demonstrates how to perform basic versioning tasks in the IDE by guiding you through the standard workflow when using versioning software.
+Git is a free and open source, distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Every Git clone is a full-fledged repository with complete history and full revision tracking capabilities, not dependent on network access or a central server. Branching and merging are fast and easy to do. Git is used for version control of files, much like tools such as Mercurial, Subversion, CVS, Perforce, etc.
+Contents
+Content on this page applies to NetBeans IDE 7.4 and 8.0
+Initializing a Git Repository
+Cloning a Git Repository
+Cloning a Repository from GitHub via SSH Protocol
+Adding Files to a Git Repository
+Editing Files
+Viewing Changes in the Source Editor
+Viewing File Status Information
+Comparing File Revisions
+Reverting Changes
+Committing Sources to a Repository
+Working with Branches
+Creating a Branch
+Checking Out a Branch
+Merging
+Deleting a Branch
+Working with Remote Repositories
+Fetching
+Pulling
+Pushing
+Summary
+See Also
+Requirements
+To complete this tutorial, you need the following software and resources.
+Software or Resource	Version Required
+NetBeans IDE	Version 7.4 or 8.0
+Java Development Kit (JDK)	Version 7 or 8
+Initializing a Git Repository
+To initialize a Git repository from existing files that are not in source control yet, you need to complete the following steps:
+In the Projects window, select an unversioned project and right-click the project name.
+In the context menu, choose Versioning > Initialize Git Repository (alternatively, in the main menu, choose Team > Git > Initialize).
+ Plugins dialog box
+Specify the path to the repository you are going to store your versioned files in the Initialize a Git Repository dialog box or click Browse and browse for the directory required.
+Click OK.
+A .git subfolder is created in the folder you specified in step 3 above (your NetBeans project folder by default), which is your Git repository where all the data of your project snapshots are stored. Git starts versioning all files in the folder you specified.
+You can open Window > Output > Output to view the IDE's report about the progress of the repository creation under your local working directory.
+Output window
+All the project files are marked Added in your Working Tree. To view a file status, place the cursor over the file name in the Projects window. The status of the file in the Working Tree displays in green to the right of the slash like shown in the following picture.
+New in Working Tree
+After you initialized the Git repository, you either add files or directly commit them to the Git repository.
+Cloning a Git Repository
+To get a copy of an already existing Git repository, you need to clone it. Make sure you know the Git repository URL before starting the Clone Repository wizard in the IDE.
+Choose Team > Git > Clone from the main menu. The Clone Repository wizard displays.
+ Clone Repository wizard
+At the Repository page, specify the path to a Git repository location, user name and password (you can save them for the future if required).
+(Optional) Click Proxy Configuration to display the Options dialog box and set the proxy server settings. Click OK when finished.
+Click Next to switch to the next step of the wizard.
+At the Remote Branches page, select the repository branch(es) to be fetched (downloaded) to your local repository. Click Next.
+At the Destination Directory page, specify the following:
+In the Parent Directory field, the path to the directory intended for the cloned repository on your hard drive (alternatively, click the Browse button and navigate to the directory).
+The Parent Directory field is pre-filled with the path to the default NetBeansProjects directory where all NetBeans projects are stored.
+In the Clone Name field, the name of the local folder where the original project will be cloned to.
+By default Clone Name is filled out with the actual Git repository name.
+In the Checkout Branch field, select the branch to be checked out into the working tree.
+In the Remote Name field, the name that represents the original repository being cloned.
+origin is the default alias of the repository being cloned. It is a recommended value.
+Leave the Scan for NetBeans Projects after Clone checkbox selected to activate after-scanning right after the clone finishes. (The plugin searches for NetBeans projects in the cloned resources and offers to open the found projects.)
